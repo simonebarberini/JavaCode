@@ -5,6 +5,18 @@
  * come "nextLine()" che legge i valori String.
  * Nota: per accedere alle funzioni (come per i metodi e tutti gli elementi accessibili) bisogna utilizzare il ".";
  * 
+ * Scanner ha le funzioni per leggere le principali 8 primitive di java e sono:
+ * nextLine() - legge i valori di tipo char e String;
+ * nextBoolean() - legge i valori di tipo booleano;
+ * nextByte() - legge i valori di tipo byte;
+ * nextDouble() - legge i valori di tipo double;
+ * nextFloat() - legge i valori di tipo float;
+ * nextInt() - legge i valori di tipo int;
+ * nextLong() - legge i valori di tipo long;
+ * nextShort() - legge i valori di tipo short;
+ * Nota: inserire un valore in input di diverso tipo da quello che si aspetta lo Scanner con le funzioni 
+ * di lettura genererà un errore (come "InputMismatchException")
+ * 
  */
 
 import java.util.Scanner;
