@@ -29,13 +29,19 @@ public class Condizioni {
         }
 
         //Prova IF con varibili
-        int time = 10;
+        int time = 20;
         if (time<18) {
             System.out.println("Good Day.");
         }else{
             System.out.println("Good Evening");
         }
         //Outputs Good Day
+
+        // É possibile ottenere lo stesso risultato senza fare l'if e su una riga
+        // soltanto
+        String result = (time < 18) ? "Good Day" : "Good Evening";
+        System.out.println("Risultato di: String result = (time<18)?\"Good Day\":\"Good Evening\";---> " + result);
+        // Outputs Good Evening
 
         //Prova Else If
         time = 22;
