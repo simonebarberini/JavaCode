@@ -47,5 +47,44 @@ public class Condizioni {
             System.out.println("Good Evening");
         }
         //Outputs "Good Evening"
+
+                                        //Switch
+        //Invece di scrivere molte if..else , puoi usare la dichiarazione switch .
+        //L'istruzione switch seleziona uno dei tanti blocchi di codice da eseguire
+        /*
+         * L'espressione switch viene valutata una volta. Il valore dell'espressione
+         * viene confrontato con i valori di ciascun case.
+         * 
+         * Se c'è una corrispondenza, viene eseguito il blocco di codice associato.
+         * 
+         * Le parole chiave break e default sono facoltative e verranno descritte più
+         * avanti in questo capitolo
+         * 
+         * L'esempio seguente utilizza il numero del giorno della settimana per
+         * calcolare il nome del giorno della settimana:
+         */
+
+        int x = 1;
+
+         switch (x) {
+            case 1:
+                System.out.println("Sei nel case 1");
+                break;
+            case 4:
+                System.out.println("Sei nel case 4");
+            default:
+                System.out.println("Nessuna corrispondenza trovata");
+                break;
+         }
+
+
+
+
+
+
+
+
+
+
     }
 }
