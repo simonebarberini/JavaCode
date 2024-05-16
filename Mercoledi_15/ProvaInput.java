@@ -16,6 +16,7 @@
  * nextShort() - legge i valori di tipo short;
  * Nota: inserire un valore in input di diverso tipo da quello che si aspetta lo Scanner con le funzioni 
  * di lettura genererà un errore (come "InputMismatchException")
+ * Si usa uno scanner per ogni tipo di dato.
  * 
  */
 
