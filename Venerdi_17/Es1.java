@@ -70,12 +70,8 @@ public class Es1 {
                 System.out.println("Arrivederci");
             }
         }
-
-        System.out.println("Programma terminato arrivederci");
-        
+        System.out.println("Programma terminato arrivederci"); 
         scannerN.close();
         scannerS.close();
-
-
     }
 }
