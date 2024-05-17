@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Es1 {
     public static void main(String[] args) {
-        int scelta;
+        int sceltaMenu;
         String username = "";
         String password = "";
         Scanner scannerS = new Scanner(System.in);
@@ -12,9 +12,10 @@ public class Es1 {
         int tentativi = 0;
 
         System.out.println("Inserisci 1 per registrarti 0 per fare il login?");
-        scelta = scannerN.nextInt();
+        sceltaMenu = scannerN.nextInt();
+        
         while (!scelto) {
-            switch (scelta) {
+            switch (sceltaMenu) {
                 case 0:{
                     scelto = true;
                     System.out.println("Inserisci username per accedere: ");
@@ -33,12 +34,12 @@ public class Es1 {
                     }else{
                         System.out.println("Username non registrato registrati : ");
                         scelto = false;
-                        scelta = 1;
+                        sceltaMenu = 1;
                     }
                     break;
                 }
                 case 1:{
-                    scelta = 0;
+                    sceltaMenu = 0;
                     System.out.println("Inserisci username per la registrazione: ");
                     username = scannerS.nextLine();
 
@@ -56,7 +57,8 @@ public class Es1 {
                 }
 
                 default:
-                System.out.println("Scelta non valida riprovare:  ");
+                    System.out.println("Scelta non valida:  ");
+                    scelto = true;
                     break;
             }
         }
