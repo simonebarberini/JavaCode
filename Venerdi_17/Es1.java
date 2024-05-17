@@ -17,7 +17,7 @@ public class Es1 {
         while (!scelto) {
             switch (sceltaMenu) {
                 case 0:{
-                    scelto = true;
+                    // scelto = true;
                     System.out.println("Inserisci username per accedere: ");
                     if(username.equals(scannerS.nextLine())){
                         while (!loggato && tentativi<3) {
@@ -30,6 +30,8 @@ public class Es1 {
                                 System.out.println("Password errata tentativo "+tentativi);
                                 loggato = false;
                             }
+                            System.out.println("Tentativi esauriti utente bloccato");
+                            scelto = true;
                         }
                     }else{
                         System.out.println("Username non registrato registrati : ");
