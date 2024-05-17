@@ -9,7 +9,7 @@ public class Es1 {
         Scanner scannerN = new Scanner(System.in);
         boolean scelto = false;
         boolean loggato = false;
-        //int tentativi = 0;
+        int tentativi = 0;
 
         System.out.println("Inserisci 1 per registrarti 0 per fare il login?");
         scelta = scannerN.nextInt();
@@ -18,19 +18,22 @@ public class Es1 {
                 case 0:{
                     scelto = true;
                     System.out.println("Inserisci username per accedere: ");
-
                     if(username.equals(scannerS.nextLine())){
-                        System.out.println("Inserisci password: ");
-                        if (password.equals(scannerS.nextLine())) {
-                            System.out.println("Password corretta ");
-                            loggato = true;
-                        }else{
-                            System.out.println("Password errata ");
-                            loggato = false;
+                        while (!loggato && tentativi<3) {
+                            System.out.println("Inserisci password: ");
+                            if (password.equals(scannerS.nextLine())) {
+                                System.out.println("Password corretta ");
+                                loggato = true;
+                            } else {
+                                tentativi++;
+                                System.out.println("Password errata tentativo "+tentativi);
+                                loggato = false;
+                            }
                         }
                     }else{
-                        System.out.println("Username errato : ");
+                        System.out.println("Username non registrato registrati : ");
                         scelto = false;
+                        scelta = 1;
                     }
                     break;
                 }
