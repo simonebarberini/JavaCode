@@ -24,6 +24,7 @@ public class EsercizioArrayListOttimizzato {
         numero = scannerN.nextInt();
         System.out.println();
         System.out.println("Inserisci "+numero+ " nomi da inserire nell'array list.");
+
         //Aggiunta
         for(int i = 0; i<numero;i++){
             System.out.println("Inserisci nome ["+(i+1)+"] da inserire nell'array list.");
@@ -38,9 +39,8 @@ public class EsercizioArrayListOttimizzato {
         }
 
         System.out.println();
-
+        // Ricerca
         while (ricerca) {
-            // Ricerca
             System.out.println("Inserisci un nome da cercare nell'array list.");
             trovato = false;
             cercato = scannerS.nextLine();
