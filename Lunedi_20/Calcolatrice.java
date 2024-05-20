@@ -26,7 +26,7 @@ public class Calcolatrice {
             switch (operazione) {
                 case 0:
                     counter[0]++;
-                    System.out.println(nomeUtente+"Hai scelto la somma");
+                    System.out.println(nomeUtente+" hai scelto "+message[operazione]);
                     System.out.println("Inserisci il primo addendo: ");
                     addendoUno = scannerN.nextFloat();
                     System.out.println("Inserisci il secondo addendo: ");
@@ -38,6 +38,7 @@ public class Calcolatrice {
                     break;
                 case 1:
                     counter[1]++;
+                    System.out.println(nomeUtente + " hai scelto " + message[operazione]);
                     System.out.println("Inserisci il primo addendo: ");
                     addendoUno = scannerN.nextFloat();
                     System.out.println("Inserisci il secondo addendo: ");
@@ -49,6 +50,7 @@ public class Calcolatrice {
                     break;
                 case 2:
                     counter[2]++;
+                    System.out.println(nomeUtente + " hai scelto " + message[operazione]);
                     System.out.println("Inserisci il primo addendo: ");
                     addendoUno = scannerN.nextFloat();
                     System.out.println("Inserisci il secondo addendo: ");
@@ -60,6 +62,7 @@ public class Calcolatrice {
                     break;
                 case 3:
                     counter[3]++;
+                    System.out.println(nomeUtente + " hai scelto " + message[operazione]);
                     System.out.println("Inserisci il primo addendo: ");
                     addendoUno = scannerN.nextFloat();
                     System.out.println("Inserisci il secondo addendo: ");
@@ -86,7 +89,7 @@ public class Calcolatrice {
         }
     
         for(int i = 0; i<counter.length; i++){
-            System.out.println("Hai usato "+message[i]+" "+counter[i]+" volte");
+            System.out.println(nomeUtente+" hai usato "+message[i]+" "+counter[i]+" volte");
         }
         scannerN.close();
         scannerS.close();
