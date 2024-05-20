@@ -14,11 +14,12 @@ public class EsercizioArrayPrimo {
         ArrayList<String> names = new ArrayList<String>();
         Scanner scannerS = new Scanner(System.in);
         boolean trovato = false;
+        String cercato;
 
         System.out.println("Inserisci cinque nomi da inserire nell'array list.");
         // Aggiunta
         for (int i = 0; i < 5; i++) {
-            System.out.println("Inserisci nome [" + i + "] da inserire nell'array list.");
+            System.out.println("Inserisci nome [" + (i+1) + "] da inserire nell'array list.");
             names.add(scannerS.nextLine());
         }
         // Stampa
@@ -27,18 +28,21 @@ public class EsercizioArrayPrimo {
         }
         // Ricerca
         System.out.println("Inserisci un nome da cercare nell'array list.");
-        String cercato = scannerS.nextLine();
+        trovato = false;
+        cercato = scannerS.nextLine();
         for (String name : names) {
             if (name.toLowerCase().equals(cercato.toLowerCase())) {
                 trovato = true;
+                //names.remove(names.indexOf(name));
+                break;
             } else {
                 trovato = false;
             }
         }
         if (trovato) {
-            System.out.println(cercato + " é all'interno dell'arry list");
+            System.out.println(cercato + " é presente.");
         } else {
-            System.out.println(cercato + " non é all'interno dell'arry list");
+            System.out.println(cercato + " non é presente.");
         }
 
         // Rimozione
