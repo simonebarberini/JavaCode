@@ -88,6 +88,8 @@ public class Calcolatrice {
         for(int i = 0; i<counter.length; i++){
             System.out.println("Hai usato "+message[i]+" "+counter[i]+" volte");
         }
+        scannerN.close();
+        scannerS.close();
     }
 
 
