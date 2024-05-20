@@ -9,7 +9,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EsercizioArrayList {
+public class EsercizioArrayListOttimizzato {
     public static void main(String[] args) {
         ArrayList<String> names = new ArrayList<String>();
         Scanner scannerS = new Scanner(System.in);
