@@ -11,7 +11,7 @@ public class Videoteca {
 
     public void addFilm(Film film){
         filmList.add(film);
-        System.out.println("Film aggiunto: "+film);
+        System.out.println("Film aggiunto: "+film.getTitle());
     }
 
     public void signUser(Utente utente){
@@ -21,13 +21,13 @@ public class Videoteca {
 
     public void removeFilm(Film film){
         filmList.remove(film);
-        System.out.println("Film rimosso: " + film);
+        System.out.println("Film rimosso: " + film.getTitle());
     }
 
     public void rentFilm(Utente utente, Film film){
         if(filmList.contains(film)){
             utente.rentFilm(film);
-            System.out.println("Film \""+film+"\" noleggiato da " + utente.getName());
+            System.out.println("Film \""+film.getTitle()+"\" noleggiato da " + utente.getName());
         }else{
             System.out.println("Film non disponibile ");
         }
@@ -38,7 +38,7 @@ public class Videoteca {
             System.out.println("Nessun utente registrato.");
         }else{
             for (int i = 0; i<utenti.size();i++) {
-                System.out.println(i+")"+utenti.get(i).getName());
+                System.out.println(i+")"+"id: "+utenti.get(i).id+" nome: "+utenti.get(i).getName());
             }
         }
     }
@@ -48,7 +48,7 @@ public class Videoteca {
             System.out.println("Nessun film disponibile.");
         } else {
             for (int i = 0; i < filmList.size(); i++) {
-                System.out.println(i + ")" + filmList.get(i).getTitle());
+                System.out.println(i + ")" + filmList.get(i).getTitle()+", "+filmList.get(i).getYear());
             }
         }
     }
