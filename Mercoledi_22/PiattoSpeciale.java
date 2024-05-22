@@ -53,6 +53,7 @@ public class PiattoSpeciale {
         }
     }
 
+    //getter 
     public ArrayList<Ingrediente> getIngredientiPrivati() {
         return ingredientiPrivati;
     }
