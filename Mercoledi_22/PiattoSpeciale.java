@@ -15,8 +15,8 @@ public class PiattoSpeciale {
         Ingrediente ing1 = new Ingrediente("Bacon", 1.25);
         Ingrediente ing2 = new Ingrediente("Salame", 2.25);
         Ingrediente ing3 = new Ingrediente("Cheddar", 3.00);
-        Ingrediente ing8 = new Ingrediente("Cheddar", 3.00);
-        Ingrediente ing9 = new Ingrediente("Cheddar", 3.00);
+        Ingrediente ing8 = new Ingrediente("Maionese", 0.50);
+        Ingrediente ing9 = new Ingrediente("Hamburger", 3.50);
         ingredientiPrivati.add(ing1);
         ingredientiPrivati.add(ing2);
         ingredientiPrivati.add(ing3);
@@ -25,8 +25,8 @@ public class PiattoSpeciale {
 
         Ingrediente ing4 = new Ingrediente("Pane normale", 2.0);
         Ingrediente ing5 = new Ingrediente("Pane di sesamo", 3.50);
-        Ingrediente ing6 = new Ingrediente("mozzarella", 0.50);
-        Ingrediente ing7 = new Ingrediente("insalata", 0.50);
+        Ingrediente ing6 = new Ingrediente("Mozzarella", 0.50);
+        Ingrediente ing7 = new Ingrediente("Insalata", 0.50);
         ingredientiPubblici.add(ing4);
         ingredientiPubblici.add(ing5);
         ingredientiPubblici.add(ing6);
