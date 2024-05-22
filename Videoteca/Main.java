@@ -89,6 +89,14 @@ public class Main {
                     }
                     break;
                 case 5:
+                    System.out.println("Elenco film disponibili: ");
+                    videoteca.filmList();
+                    break;
+                case 6:
+                    System.out.println("Elenco utenti registrati: ");
+                    videoteca.userList();
+                    break;
+                case 7:
                     
                 case 8:
                     running = false;
@@ -98,9 +106,6 @@ public class Main {
                     break;
             }
         }
-
-        videoteca.filmList();
-
         
     }
 }
