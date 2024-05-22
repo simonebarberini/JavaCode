@@ -26,7 +26,7 @@ public class PiattoSpeciale {
         ingredientiScelti = new ArrayList<>();
     }
 
-    public boolean aggiungniIngrPublic(String nomeIng){
+    public void aggiungniIngrPublic(String nomeIng){
         boolean trovato =false;
         Ingrediente ingredienteDaAggiungere=null;
         for(Ingrediente ingr : ingredientiPubblici){
@@ -39,10 +39,8 @@ public class PiattoSpeciale {
         if (trovato) {
             ingredientiScelti.add(ingredienteDaAggiungere);
             System.out.println("Ingrediente scelto disponibile e aggiunto al panino.");
-            return false;
         }else{
             System.out.println("Ingrediente scelto non disponibile.");
-            return true;
         }
     }
 
@@ -57,7 +55,7 @@ public class PiattoSpeciale {
         }
     }
 
-    public boolean aggiungiInredientiPrivati(String nomeIng){
+    public void aggiungiInredientiPrivati(String nomeIng){
         boolean trovato = false;
         Ingrediente ingredienteDaAggiungere = null;
         for (Ingrediente ingr : ingredientiPrivati) {
@@ -70,10 +68,8 @@ public class PiattoSpeciale {
         if (trovato) {
             ingredientiScelti.add(ingredienteDaAggiungere);
             System.out.println("Ingrediente scelto disponibile e aggiunto al panino.");
-            return false;
         } else {
             System.out.println("Ingrediente scelto non disponibile.");
-            return true;
         }
     }
 

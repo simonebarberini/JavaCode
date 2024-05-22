@@ -17,7 +17,7 @@ public class Menu {
                 System.out.println("- " + ing.nome + " " + ing.prezzo);
             }
             String ingrPubblico = scannerS.nextLine();
-            running = piatto.aggiungniIngrPublic(ingrPubblico);
+            piatto.aggiungniIngrPublic(ingrPubblico);
         }
         //scelta ingredienti privati
         running = true;
@@ -27,7 +27,14 @@ public class Menu {
                 System.out.println("- "+ingrPrivato.nome+" "+ingrPrivato.prezzo);
             }
             String ingredientePrivato = scannerS.nextLine();
-            running = piatto.aggiungiInredientiPrivati(ingredientePrivato);
+            piatto.aggiungiInredientiPrivati(ingredientePrivato);
+            System.out.println("Vuoi aggiungere un altro ingrediente? ");
+            if(scannerS.nextLine().equalsIgnoreCase("si")){
+                running = true;
+            }else{
+                running = false;
+            }
+
         }
 
         piatto.calcolaPrezzo();
