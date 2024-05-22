@@ -64,7 +64,9 @@ public class ProvaProgettoGruppo {
                     break;
 
                 case 3://Rimuovi dolci
-                    
+                    String eliminaDolce;
+
+                    System.out.println("\nDammi il nome del dolce da eliminare ");
                     break;
 
                 case 4:
