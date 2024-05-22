@@ -12,12 +12,20 @@ public class Menu {
         boolean running = true;
         //scelta ingredienti pubblici
         while (running) {
-            System.out.println("Seleziona un tipo di pane: ");
+            System.out.println("Seleziona un ingrediente pubblico tra quelli disponibili: ");
             for(Ingrediente ing: piatto.ingredientiPubblici){
                 System.out.println("- " + ing.nome + " " + ing.prezzo);
             }
+            System.out.println();//a capo
             String ingrPubblico = scannerS.nextLine();
             piatto.aggiungniIngrPublic(ingrPubblico);
+            System.out.println("Vuoi aggiungere un altro ingrediente? ");
+            if (scannerS.nextLine().equalsIgnoreCase("si")) {
+                running = true;
+            } else {
+                running = false;
+            }
+            System.out.println();//a capo
         }
         //scelta ingredienti privati
         running = true;
@@ -26,6 +34,7 @@ public class Menu {
             for(Ingrediente ingrPrivato: piatto.getIngredientiPrivati()){
                 System.out.println("- "+ingrPrivato.nome+" "+ingrPrivato.prezzo);
             }
+            System.out.println();//a capo
             String ingredientePrivato = scannerS.nextLine();
             piatto.aggiungiInredientiPrivati(ingredientePrivato);
             System.out.println("Vuoi aggiungere un altro ingrediente? ");
@@ -34,6 +43,7 @@ public class Menu {
             }else{
                 running = false;
             }
+            System.out.println();//a capo
 
         }
 
