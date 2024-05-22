@@ -46,7 +46,7 @@ public class Menu {
             System.out.println();//a capo
 
         }
-
+        piatto.stampaIngredientiScelti();
         piatto.calcolaPrezzo();
 
         scannerS.close();
