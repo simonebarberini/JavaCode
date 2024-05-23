@@ -18,21 +18,10 @@ public class Main {
             switch (sceltaOperazione) {
                 case 1:
                     fabbrica.aggiungiPannaCotta();
-                    System.out.println("Vuoi fare un altra operazione? [si] [no]");
-                    if (scannerS.hasNext() && scannerS.nextLine().equalsIgnoreCase("si")) {
-                        running = true;
-                    }else{
-                        running = false;
-                    }
-                    break;
+                    running = fabbrica.continuaCiclo();
                 case 2:
                     fabbrica.stampaPanneCotte();
-                    System.out.println("Vuoi fare un altra operazione? [si] [no]");
-                    if (scannerS.hasNext()&&scannerS.nextLine().equalsIgnoreCase("si")) {
-                        running = true;
-                    } else {
-                        running = false;
-                    }
+                    running = fabbrica.continuaCiclo();
                     break;
                 case 4:
                     System.out.println("Uscita dal programma...");
@@ -47,6 +36,7 @@ public class Main {
         scannerN.close();
         scannerS.close();
     }
+
 
      static void menu() {
         System.out.println("Select an option: \n");

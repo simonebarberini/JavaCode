@@ -15,6 +15,7 @@ public class Fabbrica {
         Scanner scannerN = new Scanner(System.in);
         boolean run = true;
         int tipoPannaCotta;
+        System.out.println("Sono la funzione aggiungi pannaCotta");
         System.out.println("\nChe tipo di panna cotta vuoi aggiungere? (1)Classica, (2)Frutta o (3)Cioccolato?");
         tipoPannaCotta = scannerN.nextInt();
         switch (tipoPannaCotta) {
@@ -28,16 +29,17 @@ public class Fabbrica {
                 pannaCotta.setPrezzo(prezzoPannaCotta);
                 while (run) {
                     System.out.println("\nLa tua panna cotta ha ingredienti aggiuntivi? ");
-                    if (scannerS.hasNextLine()&&scannerS.nextLine().equalsIgnoreCase("si")) {
+                    if (scannerS.hasNextLine() && scannerS.nextLine().equalsIgnoreCase("si")) {
                         pannaCotta.aggiungiIngrediente();
                         run = true;
-                    }else{
+                    } else {
                         run = false;
                     }
                 }
                 listaPanneCotte.add(pannaCotta);
+                System.out.println("Panna cotta aggiunta");
                 break;
-            
+
             case 2:
                 PannaCottaFrutta pannaCottaFrutta = new PannaCottaFrutta(null, 0, null);
                 System.out.println("\nInserisci il nome della panna cotta: ");
@@ -51,7 +53,7 @@ public class Fabbrica {
                 pannaCottaFrutta.setTipoFrutta(tipoDiFrutta);
                 while (run) {
                     System.out.println("\nLa tua panna cotta ha ingredienti aggiuntivi? ");
-                    if (scannerS.hasNextLine()&&scannerS.nextLine().equalsIgnoreCase("si")) {
+                    if (scannerS.hasNextLine() && scannerS.nextLine().equalsIgnoreCase("si")) {
                         pannaCottaFrutta.aggiungiIngrediente();
                         run = true;
                     } else {
@@ -59,6 +61,7 @@ public class Fabbrica {
                     }
                 }
                 listaPanneCotte.add(pannaCottaFrutta);
+                System.out.println("Panna cotta aggiunta");
                 break;
 
             case 3:
@@ -67,7 +70,7 @@ public class Fabbrica {
                 String nomePannaCottaCioccolato = scannerS.nextLine();
                 System.out.println("\nInserisci il prezzo della panna cotta: ");
                 double prezzoPannaCottaCioccolato = scannerN.nextDouble();
-                System.out.println("\nInserisci il tipo di frutta della panna cotta: ");
+                System.out.println("\nInserisci percentuale di cioccolato della panna cotta: ");
                 double percentualeCioccolato = scannerN.nextDouble();
                 pannaCottaCioccolato.setNome(nomePannaCottaCioccolato);
                 pannaCottaCioccolato.setPrezzo(prezzoPannaCottaCioccolato);
@@ -82,17 +85,39 @@ public class Fabbrica {
                         break;
                     }
                 }
+                
                 listaPanneCotte.add(pannaCottaCioccolato);
+                System.out.println("Panna cotta aggiunta");
                 break;
-        
+
             default:
                 System.out.println("\nOperazione scelta sbagliata riprova.");
                 break;
-            
-        } 
+        }
         
+
+        System.out.println("\nRitorno al menu principale...");
         scannerS.close();
         scannerN.close();
+    }
+
+    public boolean continuaCiclo() {
+        Scanner scanner = new Scanner(System.in);
+        String scelta;
+        boolean ritorno = false;
+        System.out.println("Vuoi fare un altra operazione? [si] [no]");
+        if (scanner.hasNextLine()) {
+            scelta = scanner.nextLine();
+        }else{
+            scelta = "no";
+        }
+        if (scelta.trim().equalsIgnoreCase("si")) {
+            ritorno = true;
+        } else if (scelta.trim().equalsIgnoreCase("no")) {
+            ritorno = false;
+        }
+        scanner.close();
+        return ritorno;
     }
 
     public void stampaPanneCotte(){
