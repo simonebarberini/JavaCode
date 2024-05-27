@@ -4,7 +4,7 @@ public class Main {
         Agente pol = new Poliziotto("Salvatore", "Esposito", "123456");
         det.descriviLavoro();
         pol.descriviLavoro();
-        det.getMatricola();
-        pol.getMatricola();
+        System.out.println(det.getMatricola());
+        System.out.println( pol.getMatricola());
     }
 }
