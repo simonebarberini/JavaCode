@@ -7,6 +7,18 @@ public class Poliziotto extends Agente {
         this.matricola = matricola;
     }
     
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public String getMatricola() {
+        return matricola;
+    }
+    
     @Override
     public void descriviLavoro() {
         System.out.println("Mi chiamo "+ getNome() +" "+getCognome()+" e sono un poliziotto");

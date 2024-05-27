@@ -1,5 +1,8 @@
 public abstract class Agente{
     String nome;
+    String cognome;
+    String matricola;
+    
     public String getNome() {
         return nome;
     }
@@ -11,9 +14,6 @@ public abstract class Agente{
     public String getMatricola() {
         return matricola;
     }
-
-    String cognome;
-    String matricola;
 
     public abstract void descriviLavoro();
 }

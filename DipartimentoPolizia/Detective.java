@@ -5,6 +5,18 @@ public class Detective extends Agente{
         this.cognome = cognome;
         this.matricola = matricola;
     }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public String getMatricola() {
+        return matricola;
+    }
 
     @Override
     public void descriviLavoro() {
