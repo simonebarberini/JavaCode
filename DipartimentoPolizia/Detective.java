@@ -1,5 +1,7 @@
 public class Detective extends Agente{
-    
+    String nome;
+    String cognome;
+    String matricola;
     public Detective(String nome, String cognome, String matricola){
         this.nome = nome;
         this.cognome = cognome;

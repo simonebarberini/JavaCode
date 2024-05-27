@@ -1,5 +1,7 @@
 public class Poliziotto extends Agente {
-
+    String nome;
+    String cognome;
+    String matricola;
 
     public Poliziotto(String nome, String cognome, String matricola){
         this.nome = nome;
@@ -18,7 +20,7 @@ public class Poliziotto extends Agente {
     public String getMatricola() {
         return matricola;
     }
-    
+
     @Override
     public void descriviLavoro() {
         System.out.println("Mi chiamo "+ getNome() +" "+getCognome()+" e sono un poliziotto");
