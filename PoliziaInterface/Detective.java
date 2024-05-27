@@ -22,6 +22,6 @@ public class Detective implements Agente{
 
     @Override
     public void descriviLavoro() {
-        System.out.println("Mi chiamo " + getNome() + " " + getCognome() + " e sono un detective");
+        System.out.println(getMatricola()+" " + getNome() + " " + getCognome() + " e sono un detective");
     }
 }
