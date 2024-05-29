@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,5 +23,41 @@ public class Main {
         gestioneDispSicurezza.addDispositivo(vent2);
 
         gestioneDispSicurezza.verificaDispositivi();
+
+        Scanner scannerN = new Scanner(System.in);
+        
+        // while (true) {
+        //     System.out.println("Scegli un dispositivo da aggiungere\n");
+        //     System.out.println("1. Estintore");
+        //     System.out.println("2. Kit Pronto Soccorso");
+        //     System.out.println("3. Allarme antincendio");
+        //     System.out.println("4. Sistema di ventilazione");
+        //     System.out.println("5. Esci\n");
+        //     System.out.print("Choice: ");
+
+        //     int choice = scannerN.nextInt();
+        //     switch (choice) {
+        //         case 1:
+        //             System.out.println("Quale é la pressione del tuo estintore? ");
+        //             double press = scannerN.nextDouble();
+        //             Estintore est3 = new Estintore(press);
+        //             gestioneDispSicurezza.addDispositivo(est3);
+        //             break;
+        //         case 2:
+        //             System.out.println("Quale é la pressione del tuo estintore? ");
+        //             LocalDate data;
+        //             while(true){
+        //                 System.out.println("Inserisci una da");
+        //             }
+        //             Estintore kit3 = new Estintore(data);
+        //             gestioneDispSicurezza.addDispositivo(est3);
+        //             break;
+            
+        //         default:
+        //             break;
+        //     }
+        // }
+
+        
     }
 }
