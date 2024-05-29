@@ -3,9 +3,5 @@ public class Tecnico extends Amministrativo {
         super(name, salary, bonusPercentage);
     }
 
-    @Override
-    public double calculateBonus() {
-        double bonus = getSalary() * bonusPercentage / 100;
-        return bonus;
-    }
+
 }
