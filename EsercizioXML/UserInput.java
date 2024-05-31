@@ -23,7 +23,7 @@ public interface UserInput {
         String email = scannerS.nextLine();
         System.out.println("Inserisci la tua eta : ");
         int age = scannerN.nextInt();
-        if(firstName!=null && lastName!=null && email != null && age>0){
+        if(!(firstName.equals("")) && !(lastName.equals("")) && !(email.equals("")) && (age>0)){
             User user = new User(firstName, lastName, email, age);
             return user;
         }else{
