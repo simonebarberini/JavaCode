@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         User user = UserInput.createUser();
-        user.toString();
+        System.out.println(user.toString());
         Scanner scanerS = new Scanner(System.in);
         System.out.println("Vuoi salvare le informazini in un file XML");
         if(scanerS.nextLine().trim().equals("si")){
