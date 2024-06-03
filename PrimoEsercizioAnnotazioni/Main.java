@@ -37,7 +37,6 @@ public class Main {
                 System.out.println(custom.message());
             }
         }
-        System.out.println(metodi);
 
         serializeToXML(persona, "infopersona");
 
