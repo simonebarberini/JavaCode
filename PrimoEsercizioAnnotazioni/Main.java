@@ -12,24 +12,26 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+
 
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        // Scanner scanner = new Scanner(System.in);
-        // System.out.println("Inserisci il nome.");
-        // String nome = scanner.nextLine();
-        // System.out.println("Inserisci l'etá.");
-        // int age = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci il nome.");
+        String nome = scanner.nextLine();
+        System.out.println("Inserisci l'etá.");
+        int age = scanner.nextInt();
 
-        // Person persona = new Person(nome, age);
+        int x =0;
 
-        //serializeToXML(persona, "infopersona");
+        Person persona = new Person(nome, age);
 
-        readFromXML("infopersona.xml");
+        serializeToXML(persona, "infopersona"+x);
 
-        // scanner.close();
+        readFromXML("infopersona"+x+".xml");
+
+        scanner.close();
     }
 
     public static void serializeToXML(Person personIn, String fileName){
