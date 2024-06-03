@@ -12,21 +12,24 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserisci il nome.");
-        String nome = scanner.nextLine();
-        System.out.println("Inserisci l'etá.");
-        int age = scanner.nextInt();
+    public static void main(String[] args) throws Exception {
+        // Scanner scanner = new Scanner(System.in);
+        // System.out.println("Inserisci il nome.");
+        // String nome = scanner.nextLine();
+        // System.out.println("Inserisci l'etá.");
+        // int age = scanner.nextInt();
 
-        Person persona = new Person(nome, age);
+        // Person persona = new Person(nome, age);
 
-        serializeToXML(persona, "infopersona");
+        //serializeToXML(persona, "infopersona");
 
-        scanner.close();
+        readFromXML("infopersona.xml");
+
+        // scanner.close();
     }
 
     public static void serializeToXML(Person personIn, String fileName){
@@ -71,6 +74,28 @@ public class Main {
             pce.printStackTrace();
         } catch (TransformerException tfe) {
             tfe.printStackTrace();
+        }
+    }
+
+    public static void readFromXML(String fileName){
+         try {
+            File file = new File(fileName);
+            DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+            Document document = documentBuilder.parse(file);
+
+            document.getDocumentElement().normalize();
+
+            Element root = document.getDocumentElement();
+
+            String name = root.getElementsByTagName("name").item(0).getTextContent();
+            int age = Integer.parseInt(root.getElementsByTagName("age").item(0).getTextContent());
+
+            System.out.println("Nome: " + name);
+            System.out.println("Eta': " + age);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

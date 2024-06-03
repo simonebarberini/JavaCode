@@ -19,7 +19,7 @@ public class Person {
     }
 
     public String getInfo(){
-        return "Nome: "+ name+ "Age: "+age;
+        return "Nome: "+ name+ " Age: "+age;
     }
     
 }
