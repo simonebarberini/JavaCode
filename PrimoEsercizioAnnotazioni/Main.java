@@ -1,0 +1,76 @@
+import java.io.File;
+import java.util.Scanner;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Inserisci il nome.");
+        String nome = scanner.nextLine();
+        System.out.println("Inserisci l'etá.");
+        int age = scanner.nextInt();
+
+        Person persona = new Person(nome, age);
+
+        serializeToXML(persona, "infopersona");
+
+        scanner.close();
+    }
+
+    public static void serializeToXML(Person personIn, String fileName){
+        try {
+            DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
+            Document document = documentBuilder.newDocument();
+
+
+
+            Element root = document.createElement("Persone");
+            document.appendChild(root);
+
+            Element person = document.createElement("Person");
+            root.appendChild(person);
+
+            person.setAttribute("id", "1");
+
+            Element name = document.createElement("name");
+            name.appendChild(document.createTextNode(personIn.getName()));
+            person.appendChild(name);
+
+            Element age = document.createElement("age");
+            age.appendChild(document.createTextNode(personIn.getAge()));
+            person.appendChild(age);
+
+            Element info = document.createElement("info");
+            info.appendChild(document.createTextNode(personIn.getInfo()));
+            person.appendChild(info);
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource domSource = new DOMSource(document);
+
+            StreamResult streamResult = new StreamResult(new File(fileName+".xml"));
+            transformer.transform(domSource, streamResult);
+
+            System.out.println("File XML creato con successo!");
+
+            
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+        } catch (TransformerException tfe) {
+            tfe.printStackTrace();
+        }
+    }
+}

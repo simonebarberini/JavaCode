@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <Persone>
+        <Person id="1">
+            <name>Simone</name>
+            <age>22</age>
+            <info>Nome: SimoneAge: 22</info>
+        </Person>
+    </Persone>
