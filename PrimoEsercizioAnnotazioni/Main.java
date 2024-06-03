@@ -1,4 +1,5 @@
 import java.io.File;
+import java.lang.reflect.Method;
 import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -10,6 +11,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -23,18 +25,28 @@ public class Main {
         System.out.println("Inserisci l'etá.");
         int age = scanner.nextInt();
 
-        int x =0;
-
         Person persona = new Person(nome, age);
+        if(Person.class.isAnnotationPresent(Info.class)){
+            Info info = Person.class.getAnnotation(Info.class);
+            System.out.println(info.author()+ " "+info.version());
+        }
+        Method[] metodi = Person.class.getMethods();
+        for(Method metodo:metodi){
+            if(metodo.isAnnotationPresent(DeprecatedCustom.class)){
+                DeprecatedCustom custom = metodo.getAnnotation(DeprecatedCustom.class);
+                System.out.println(custom.message());
+            }
+        }
+        System.out.println(metodi);
 
-        serializeToXML(persona, "infopersona"+x);
+        serializeToXML(persona, "infopersona");
 
-        readFromXML("infopersona"+x+".xml");
+        readFromXML("infopersona.xml");
 
         scanner.close();
     }
 
-    public static void serializeToXML(Person personIn, String fileName){
+    public static void serializeToXML(Person personIn, String fileName) throws DOMException, NoSuchMethodException{
         try {
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
@@ -92,9 +104,11 @@ public class Main {
 
             String name = root.getElementsByTagName("name").item(0).getTextContent();
             int age = Integer.parseInt(root.getElementsByTagName("age").item(0).getTextContent());
+            String info = root.getElementsByTagName("info").item(0).getTextContent();
 
             System.out.println("Nome: " + name);
             System.out.println("Eta': " + age);
+            System.out.println("Info: "+ info);
 
         } catch (Exception e) {
             e.printStackTrace();

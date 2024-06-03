@@ -1,4 +1,5 @@
 
+
 @Info(author = "Simone", version = "1.0")
 public class Person {
     private String name;
@@ -14,12 +15,14 @@ public class Person {
     }
 
     @DeprecatedCustom(message = "Questo metodo non deve essere utilizzato piú")
-    public String getAge() {
+    public String getAge(){
         return String.valueOf(age);
     }
 
     public String getInfo(){
-        return "Nome: "+ name+ " Age: "+age;
+        return "Name: "+name +" Age: "+ age;
     }
+
+
     
 }
