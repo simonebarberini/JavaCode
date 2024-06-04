@@ -20,7 +20,13 @@ public class Person {
     }
 
     public String getInfo(){
-        return "Name: "+name +" Age: "+ age;
+        if (Person.class.isAnnotationPresent(Info.class)) {
+            Info info = Person.class.getAnnotation(Info.class);
+            return "Author: "+info.author()+" Version: "+info.version();
+        }else{
+            return "Name: " + name + " Age: " + age;
+        }
+        
     }
 
 

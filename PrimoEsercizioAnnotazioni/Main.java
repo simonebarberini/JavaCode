@@ -26,10 +26,7 @@ public class Main {
         int age = scanner.nextInt();
 
         Person persona = new Person(nome, age);
-        if(Person.class.isAnnotationPresent(Info.class)){
-            Info info = Person.class.getAnnotation(Info.class);
-            System.out.println(info.author()+ " "+info.version());
-        }
+
         Method[] metodi = Person.class.getMethods();
         for(Method metodo:metodi){
             if(metodo.isAnnotationPresent(DeprecatedCustom.class)){
